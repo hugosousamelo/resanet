@@ -1,0 +1,25 @@
+{% include "vueEntete.html" %}
+{% include "vueEnteteGestionnaire.html" %}
+
+
+<h3 align="center"> Historique de la carte {{nomDuService}} </h3>
+		<br>
+		<table class="table">
+			<thead class="thead-dark">
+				<tr class="tableau">
+					<td><h4>Date</h4></td>
+				</tr>
+			</thead>
+		
+			{% for i in range(longueur) %}
+			<tbody>	
+				<tr class="tableau">
+					<td><h4>{{historique[i]}}</h4></td>
+			{% endfor %}
+				</tr>
+			</tbody>
+		</table>
+
+
+
+{% include "vuePied.html" %}

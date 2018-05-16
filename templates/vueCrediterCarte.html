@@ -1,0 +1,24 @@
+{% include "vueEntete.html" %}
+{% include "vueEnteteGestionnaire.html" %}
+
+<div class="row">
+	<div class="col-md-4"></div>
+	<div class="col-md-4">
+
+		<form id="crediterCarte" role="form" action="/gestionnaire/crediterCarte" method="POST">
+			<div class="form-group">
+				<label for="message">Montant à créditer</label>
+				<input type="number" class="form-control" name="montant" id="crediterCarte"/>
+				<button class="form-control"type="numeric" name= "numeroCarte" id="idMatricule" value= "{{numCarte}}">Envoyer</button>
+				
+			</div>
+		</form>
+	</div>
+
+
+
+
+
+
+
+{% include "vuePied.html" %}

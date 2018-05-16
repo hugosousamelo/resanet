@@ -1,0 +1,52 @@
+{% include "vueEntete.html" %}
+{% include "vueEnteteGestionnaire.html" %}
+
+<div class="col-md-4">
+
+	<form id="crediterCarte" role="form" action="/gestionnaire/historiqueDate" method="POST">
+		<div class="form-group">
+			<label for="datehist">Date :</label>
+			<input type="date" name="dateHistorique" placeholder= "Exemple : 2018-04-01"/>
+			<br>
+			<button class="form-control" type="submit" name= "dateHistorique" id="histdate" value= "historique">Envoyer</button>
+				
+		</div>
+	</form>
+</div>
+
+{% if date != 0 %}
+	<br>
+	<br>
+	<br>
+	<h3> Historique du {{date}} </h3>
+	<br>
+{% else %}
+
+{% endif %}
+
+<table class="table">
+	<thead class="thead-dark">
+		<tr class="tableau">
+			<td><h4>Matricule</h4></td>
+			<td><h4>Nom</h4></td>
+			<td><h4>Prenom</h4></td>
+			<td><h4>Numéro carte</h4></td>
+			<td><h4>Nom du service</h4></td>
+		</tr>
+	</thead>
+
+{% for i in range(longueur) %}
+	
+	<tbody>
+		<tr class="tableau">
+			<td><h4>{{leMatricule[i]}}</h4></td>
+			<td><h4>{{leNom[i]}}</h4></td>
+			<td><h4>{{lePrenom[i]}}</h4></td>
+			<td><h4>{{numCarte[i]}}</h4></td>
+			<td><h4>{{nomDuService[i]}}</h4></td>
+	{% endfor %}
+		</tr>
+	</tbody>
+</table>
+
+{% include "vuePied.html" %}

@@ -1,0 +1,39 @@
+{% include "vueEntete.html" %}
+{% include "vueEnteteGestionnaire.html" %}
+
+<h3 align="center"> Liste du personnel avec carte de restauration </h3>
+<br>
+<table class="table">
+<thead class="thead-dark">
+	<tr class="tableau">		
+				
+		<td><h4>Matricule</h4></td>
+		<td><h4>Nom</h4></td>
+		<td><h4>Prenom</h4></td>
+		<td><h4>Nom du service</h4></td>
+			
+	</tr>
+	</thead>		
+			
+	{% for i in range(perso) %}
+	<tbody>
+		<tr class="tableau">
+			
+			<td><h4>{{leMatricule[i]}}</h4></td>
+			<td><h4>{{leNom[i]}}</h4></td>
+			<td><h4>{{lePrenom[i]}}</h4></td>
+			<td><h4>{{nomDuService[i]}}</h4></td>
+			<td><h4>
+				<form id="creerCompte" role="form" action="/gestionnaire/creerCompte" method="POST">
+					<button class="btn btn-primary btn-lg btn-block" name= "matricule" id="creerCompte" value= "{{leMatricule[i]}}" >Créer un compte</h4></td>
+				</form>
+		</tr>
+	</tbody>
+	{% endfor %}
+</table>	
+			
+		
+
+{% include "vuePied.html" %}
+
+<!--faire fichier css pour la class tableau-->
