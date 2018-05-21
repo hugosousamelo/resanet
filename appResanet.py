@@ -4,6 +4,7 @@
 from flask import *
 from modeles import modeleResanet
 from technique import datesResanet
+import datetime
 
 
 app = Flask( __name__ )
@@ -103,9 +104,9 @@ def listerReservations() :
 		
 	jour = ["Lundi","Mardi","Mercredi","Jeudi","Vendredi","Lundi","Mardi","Mercredi","Jeudi","Vendredi"]
 	
-	print dates	
+	today = datetime.date.today()
 	
-	return render_template( 'vueListeReservations.html' , laSession = session , leSolde = solde , lesDates = dates , soldeInsuffisant = soldeInsuffisant, jour = jour )
+	return render_template( 'vueListeReservations.html' , laSession = session , leSolde = solde , lesDates = dates , soldeInsuffisant = soldeInsuffisant, jour = jour, today = today )
 
 	
 @app.route( '/usager/reservations/annuler/<dateISO>' , methods = [ 'GET' ] )
